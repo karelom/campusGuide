@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">campus_tour</string>
     <string name="image_YZU">yzu_map</string>
+    <string name="button1">Google Map</string>
 </resources>
