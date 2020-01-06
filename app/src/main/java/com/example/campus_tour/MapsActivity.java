@@ -27,6 +27,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -189,7 +190,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // other 'case' lines to check for other
             // permissions this app might request.
         }
-    }
+    }// 判斷有無取得權限
 
     GpsStatus.Listener gpsListener = new GpsStatus.Listener() {
         @Override
@@ -266,7 +267,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private void cameraFocusOnMe(double lat, double lng){
         CameraPosition camPosition = new CameraPosition.Builder()
                 .target(new LatLng(lat, lng))
-                .zoom(16)
+                .zoom(17)
+                .bearing(90)
+                .tilt(30)
                 .build();
         if (mMap != null){
             mMap.animateCamera(CameraUpdateFactory.newCameraPosition(camPosition));
@@ -339,14 +342,20 @@ final LatLng YZU = new LatLng(24.970093, 121.263273);
         mMap.addMarker(new MarkerOptions().position(YZU)
                 .title("元智大學")
                 .snippet("於1987年創校")
+                .icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
         );
         mMap.addMarker(new MarkerOptions().position(PATH_OF_PHILOSOPHY)
                 .title("哲學之道")
                 .snippet("本校參考日本「京都哲學之道」的理念")
+                .icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
         );
         mMap.addMarker(new MarkerOptions().position(YZU_BUILDING7)
                 .title("元智七館")
                 .snippet("電機通訊學院")
+                .icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
         );
     }// 創造各點的Marker
 
