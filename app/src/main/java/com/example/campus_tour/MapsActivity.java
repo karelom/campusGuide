@@ -19,9 +19,8 @@ import android.location.LocationProvider;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -34,13 +33,16 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import android.location.Location;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback{
 
     private GoogleMap mMap;
     private Marker markerMe;
@@ -54,6 +56,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     /* GPS */
     private LocationManager locationMgr;
     private String provider;
+    private FusedLocationProviderClient fusedLocationClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +66,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
     }
+
+//    @Override
+//    public void onConnected(Bundle bundle) {
+//
+//    }
+//
+//
+//    @Override
+//    public void onConnectionSuspended(int i) {
+//
+//    }
+//
+//    @Override
+//    public void onConnectionFailed(ConnectionResult connectionResult) {
+//
+//    }
+//
+//    @Override
+//    public void onLocationChanged(Location location) {
+//
+//    }
 
     @Override
     protected void onStart() {
@@ -153,12 +178,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         }// 尚未取得使用者授權
         else {
-            // 取得上次已知的位置
-            Location location = locationMgr.getLastKnownLocation(provider);
-            updateWithNewLocation(location);
+            //Location location = locationMgr.getLastKnownLocation(provider);
+            fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);// 建立位置訊息服務客戶端
+            fusedLocationClient.getLastLocation()
+                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location location) {
+                            // Got last known location. In some rare situations this can be null.
+                            if (location != null) {
+                                // Logic to handle location object
+                                updateWithNewLocation(location);// 更新位置資訊
+                            }
+                        }
+                    });// 取得最近一次的已知位置
 
-            // GPS Listener
-            locationMgr.addGpsStatusListener(gpsListener);
+            locationMgr.addGpsStatusListener(gpsListener);// GPS Listener
 
             // Location Listener
             int minTime = 5000;//ms
@@ -314,7 +348,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //"我"
             showMarkerMe(lat, lng);
             cameraFocusOnMe(lat, lng);
-            //trackToMe(lat, lng);
+            trackToMe(lat, lng);
         }else{
             where = "No location found.";
         }

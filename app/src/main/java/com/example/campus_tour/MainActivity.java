@@ -10,9 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    private Button button2, button4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +35,15 @@ public class MainActivity extends AppCompatActivity {
             map.setOnClickListener(mapClick);
         }// 直立式
         else {
-            //設定隱藏標題
-            getSupportActionBar().hide();
+            getSupportActionBar().hide();// 設定隱藏標題
             Toast toast = Toast.makeText(context, text2, duration);
             toast.show();
 
-            Button button2 = findViewById(R.id.button2);
-            button2.setOnClickListener(button2Click);
+            button2 = findViewById(R.id.button2);// 3館
+            button2.setOnClickListener(buttonClick);
+
+            button4 = findViewById(R.id.button4);// 哲學之道
+            button4.setOnClickListener(buttonClick);
         }// 橫式地圖
 
     }
@@ -52,12 +56,27 @@ public class MainActivity extends AppCompatActivity {
         }
     };// 開啟Google map
 
-    private View.OnClickListener button2Click = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
+    private View.OnClickListener buttonClick = new View.OnClickListener() {
+        String image;
 
+        @Override
+        public void onClick(View v)
+        {
             Intent intent = new Intent(MainActivity.this, GuideActivity.class);
+            Bundle bundle = new Bundle();
+
+            if (v.getId() == button2.getId()){
+                image = "building3";
+            }// 3館
+            else if (v.getId() == button4.getId()){
+                image = "pathOfPhilosophy";
+            }// 哲學之道
+
+            bundle.putString("image", image);
+            intent.putExtras(bundle);
             startActivity(intent);
         }
-    };// 開啟3館資訊
+
+    };// 開啟各點資訊
+
 }

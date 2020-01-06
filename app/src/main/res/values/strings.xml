@@ -3,8 +3,12 @@
     <string name="app_name">campus_tour</string>
     <string name="image_YZU">yzu_map</string>
     <string name="image_B3">Building3</string>
-    <string name="button1">Google Map</string>
+    <string name="button1">我在哪</string>
+    <string name="textView2">*小提示: 橫置螢幕可以切換成元智小地圖(記得把自動旋轉打開喔!)</string>
     <string name="button2">三館</string>
+    <string name="button4">哲學之道</string>
     <string name="button3">返回</string>
-    <string name="image_content">I am description of the image.</string>
+    <string name="image_content">Some default writing for image description.</string>
+    <string name="image1_content">  工程學院 - 機械工程</string>
+    <string name="image2_content">  為配合校園景觀的人文化，本校參考日本「京都哲學之道」的理念，在校園內整建一條全程約1公里 長的「元智哲學之道」。哲學之道的起點位於校園南邊，一座2米高的白灰溪石上刻有「哲學之道」4個字，字體墨黑筆勢深沉，象徵人類萬物之靈的價值在於思考 的能力。由此面向中央大道可遠瞻元智雄偉的地標六館，沿著一段連續約200公尺長的林間石板路往北行，左邊一排高樹是南洋杉夾雜著木棉，右邊一排是掌葉蘋 婆樹；由於石板路崎嶇蜿蜒，行走者需低頭注意腳步，邊走可邊靜想，頗得哲學家思考之趣。</string>
 </resources>
