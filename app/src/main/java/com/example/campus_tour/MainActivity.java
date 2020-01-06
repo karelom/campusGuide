@@ -33,9 +33,14 @@ public class MainActivity extends AppCompatActivity {
             map.setOnClickListener(mapClick);
         }// 直立式
         else {
+            //設定隱藏標題
+            getSupportActionBar().hide();
             Toast toast = Toast.makeText(context, text2, duration);
             toast.show();
-        }// 橫式
+
+            Button button2 = findViewById(R.id.button2);
+            button2.setOnClickListener(button2Click);
+        }// 橫式地圖
 
     }
 
@@ -45,5 +50,14 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, MapsActivity.class);
             startActivity(intent);
         }
-    };
+    };// 開啟Google map
+
+    private View.OnClickListener button2Click = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            Intent intent = new Intent(MainActivity.this, GuideActivity.class);
+            startActivity(intent);
+        }
+    };// 開啟3館資訊
 }
