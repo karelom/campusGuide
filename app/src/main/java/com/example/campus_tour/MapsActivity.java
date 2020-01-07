@@ -232,15 +232,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             switch (event){
                 case GpsStatus.GPS_EVENT_STARTED:
                     Log.d(TAG, "GPS_EVENT_STARTED");
-                    Toast.makeText(MapsActivity.this, "GPS_EVENT_STARTED", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MapsActivity.this, "GPS_EVENT_STARTED", Toast.LENGTH_SHORT).show();
                     break;
                 case GpsStatus.GPS_EVENT_STOPPED:
                     Log.d(TAG, "GPS_EVENT_STOPPED");
-                    Toast.makeText(MapsActivity.this, "GPS_EVENT_STOPPED", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MapsActivity.this, "GPS_EVENT_STOPPED", Toast.LENGTH_SHORT).show();
                     break;
                 case GpsStatus.GPS_EVENT_FIRST_FIX:
                     Log.d(TAG, "GPS_EVENT_FIRST_FIX");
-                    Toast.makeText(MapsActivity.this, "GPS_EVENT_FIRST_FIX", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MapsActivity.this, "GPS_EVENT_FIRST_FIX", Toast.LENGTH_SHORT).show();
                     break;
                 case GpsStatus.GPS_EVENT_SATELLITE_STATUS:
                     Log.d(TAG, "GPS_EVENT_SATELLITE_STATUS");
@@ -348,7 +348,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //"我"
             showMarkerMe(lat, lng);
             cameraFocusOnMe(lat, lng);
-            trackToMe(lat, lng);
+            //trackToMe(lat, lng);
         }else{
             where = "No location found.";
         }

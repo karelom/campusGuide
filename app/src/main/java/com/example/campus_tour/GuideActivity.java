@@ -93,5 +93,5 @@ public class GuideActivity extends AppCompatActivity {
             default :
                 break;
         }
-    }
+    }// 各點圖片介紹
 }

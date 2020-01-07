@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
 
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            Toast toast = Toast.makeText(context, text1, duration);
-            toast.show();
+//            Toast toast = Toast.makeText(context, text1, duration);
+//            toast.show();
 
             //建立button，導到Google map 頁面
             Button map = findViewById(R.id.button);
@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
         }// 直立式
         else {
             getSupportActionBar().hide();// 設定隱藏標題
-            Toast toast = Toast.makeText(context, text2, duration);
-            toast.show();
+//            Toast toast = Toast.makeText(context, text2, duration);
+//            toast.show();
 
             button2 = findViewById(R.id.button2);// 3館
             button2.setOnClickListener(buttonClick);
@@ -65,9 +65,7 @@ public class MainActivity extends AppCompatActivity {
             button14.setOnClickListener(buttonClick);
             button15 = findViewById(R.id.button15);// 操場
             button15.setOnClickListener(buttonClick);
-
         }// 橫式地圖
-
     }
 
     private View.OnClickListener mapClick = new View.OnClickListener() {
