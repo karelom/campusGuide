@@ -371,7 +371,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
  */
 final LatLng YZU = new LatLng(24.970093, 121.263273);
     final LatLng PATH_OF_PHILOSOPHY = new LatLng(24.967640, 121.267516);
+    final LatLng YZU_BUILDING1 = new LatLng(24.970412, 121.266665);
+    final LatLng YZU_BUILDING2 = new LatLng(24.969279, 121.268190);
+    final LatLng YZU_BUILDING3 = new LatLng(24.969267, 121.266927);
+    final LatLng YZU_BUILDING5 = new LatLng(24.970167, 121.268226);
+    final LatLng YZU_BUILDING6 = new LatLng(24.970743, 121.267892);
     final LatLng YZU_BUILDING7 = new LatLng(24.968542, 121.266913);
+    final LatLng stone21 = new LatLng(24.969243, 121.267465);
+    final LatLng infinite = new LatLng(24.969843, 121.267028);
+    final LatLng sakura = new LatLng(24.969873, 121.266761);
+    final LatLng pond = new LatLng(24.968107, 121.266061);
+    final LatLng gazebo = new LatLng(24.967599, 121.266350);
+    final LatLng playground = new LatLng(24.967530, 121.268339);
+
     private void createLocation(){
         mMap.addMarker(new MarkerOptions().position(YZU)
                 .title("元智大學")
@@ -388,6 +400,72 @@ final LatLng YZU = new LatLng(24.970093, 121.263273);
         mMap.addMarker(new MarkerOptions().position(YZU_BUILDING7)
                 .title("元智七館")
                 .snippet("電機通訊學院")
+                .icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+        );
+        mMap.addMarker(new MarkerOptions().position(YZU_BUILDING1)
+                .title("元智一館")
+                .snippet("資訊學院")
+                .icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+        );
+        mMap.addMarker(new MarkerOptions().position(YZU_BUILDING2)
+                .title("元智二館")
+                .snippet("工程學院")
+                .icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+        );
+        mMap.addMarker(new MarkerOptions().position(YZU_BUILDING3)
+                .title("元智三館")
+                .snippet("工程學院 - 機械工程學系")
+                .icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+        );
+        mMap.addMarker(new MarkerOptions().position(YZU_BUILDING5)
+                .title("元智五館")
+                .snippet("人文社會學院 & 資訊傳播學系")
+                .icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+        );
+        mMap.addMarker(new MarkerOptions().position(YZU_BUILDING6)
+                .title("元智六館")
+                .snippet("管理學院")
+                .icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+        );
+        mMap.addMarker(new MarkerOptions().position(stone21)
+                .title("思新石")
+                .snippet("徐執行董事旭東先生捐贈本校兩座奇石")
+                .icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+        );
+        mMap.addMarker(new MarkerOptions().position(infinite)
+                .title("無限延伸")
+                .snippet("紅色「無限延續」藝術塑品於三週年校慶時正式落成")
+                .icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+        );
+        mMap.addMarker(new MarkerOptions().position(sakura)
+                .title("櫻花巷")
+                .snippet("元智最富有詩意的步道之一，種有許多四季盛開的花草")
+                .icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+        );
+        mMap.addMarker(new MarkerOptions().position(pond)
+                .title("戲綠塘")
+                .snippet("它是校園情侶票選最適合男女朋友約會的地方")
+                .icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+        );
+        mMap.addMarker(new MarkerOptions().position(gazebo)
+                .title("牡丹亭")
+                .snippet("原名為「靜思亭」的中國式涼亭")
+                .icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+        );
+        mMap.addMarker(new MarkerOptions().position(playground)
+                .title("操場")
+                .snippet("元智大學操場")
                 .icon(BitmapDescriptorFactory
                         .defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
         );
