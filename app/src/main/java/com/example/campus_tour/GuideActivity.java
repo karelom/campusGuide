@@ -46,6 +46,50 @@ public class GuideActivity extends AppCompatActivity {
                 image.setImageDrawable(getResources().getDrawable(R.drawable.path_of_philosophy));
                 description.setText(getResources().getString(R.string.image2_content));
                 break;
+            case "building1":
+                image.setImageDrawable(getResources().getDrawable(R.drawable.yzu_building1));
+                description.setText(getResources().getString(R.string.image3_content));
+                break;
+            case "building6":
+                image.setImageDrawable(getResources().getDrawable(R.drawable.yzu_building6));
+                description.setText(getResources().getString(R.string.image4_content));
+                break;
+            case "building5":
+                image.setImageDrawable(getResources().getDrawable(R.drawable.yzu_building5));
+                description.setText(getResources().getString(R.string.image5_content));
+                break;
+            case "building2":
+                image.setImageDrawable(getResources().getDrawable(R.drawable.yzu_building2));
+                description.setText(getResources().getString(R.string.image6_content));
+                break;
+            case "building7":
+                image.setImageDrawable(getResources().getDrawable(R.drawable.yzu_building7));
+                description.setText(getResources().getString(R.string.image7_content));
+                break;
+            case "infinite":
+                image.setImageDrawable(getResources().getDrawable(R.drawable.infinite));
+                description.setText(getResources().getString(R.string.image8_content));
+                break;
+            case "sakura":
+                image.setImageDrawable(getResources().getDrawable(R.drawable.sakura_alley));
+                description.setText(getResources().getString(R.string.image9_content));
+                break;
+            case "stone21":
+                image.setImageDrawable(getResources().getDrawable(R.drawable.stone21));
+                description.setText(getResources().getString(R.string.image10_content));
+                break;
+            case "pond":
+                image.setImageDrawable(getResources().getDrawable(R.drawable.pond));
+                description.setText(getResources().getString(R.string.image11_content));
+                break;
+            case "gazebo":
+                image.setImageDrawable(getResources().getDrawable(R.drawable.peony_gazebo));
+                description.setText(getResources().getString(R.string.image12_content));
+                break;
+            case "playground":
+                image.setImageDrawable(getResources().getDrawable(R.drawable.playground));
+                description.setText(getResources().getString(R.string.image13_content));
+                break;
             default :
                 break;
         }
